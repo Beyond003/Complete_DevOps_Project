@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app
+  namespace: ns-1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+        - name: app
+          image: 982534374994.dkr.ecr.us-east-1.amazonaws.com/final-project:frontend-latest
+          ports:
+            - containerPort: 5002
+          env:
+            - name: API_BASE_URL
+              value: http://api:5001

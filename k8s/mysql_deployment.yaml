@@ -1,0 +1,117 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  namespace: ns-1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+        - name: mysql
+          image: 982534374994.dkr.ecr.us-east-1.amazonaws.com/final-project:db-latest
+          ports:
+            - containerPort: 3306
+          envFrom:
+            - secretRef:
+                name: mysql-secret
+
+
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: mysql
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app: mysql
+#   template:
+#     metadata:
+#       labels:
+#         app: mysql
+#     spec:
+#       containers:
+#         - name: mysql
+#           image: 982534374994.dkr.ecr.us-east-1.amazonaws.com/final-project:db-latest
+#           ports:
+#             - containerPort: 3306
+#           envFrom:
+#             - secretRef:
+#                 name: mysql-secret
+#           volumeMounts:
+#             - name: mysql-data
+#               mountPath: /var/lib/mysql
+#       volumes:
+#         - name: mysql-data
+#           persistentVolumeClaim:
+#             claimName: mysql-pvc
+# ---
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: api
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app: api
+#   template:
+#     metadata:
+#       labels:
+#         app: api
+#     spec:
+#       containers:
+#         - name: api
+#           image: 982534374994.dkr.ecr.us-east-1.amazonaws.com/final-project:backend-latest
+#           ports:
+#             - containerPort: 5001
+#           env:
+#             - name: MYSQL_HOST
+#               value: mysql
+#             - name: MYSQL_PORT
+#               value: "3306"
+#             - name: DB_NAME
+#               valueFrom:
+#                 secretKeyRef:
+#                   name: mysql-secret
+#                   key: MYSQL_DATABASE
+#             - name: MYSQL_USER
+#               valueFrom:
+#                 secretKeyRef:
+#                   name: mysql-secret
+#                   key: MYSQL_USER
+#             - name: MYSQL_PASSWORD
+#               valueFrom:
+#                 secretKeyRef:
+#                   name: mysql-secret
+#                   key: MYSQL_PASSWORD
+# ---
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: app
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app: app
+#   template:
+#     metadata:
+#       labels:
+#         app: app
+#     spec:
+#       containers:
+#         - name: app
+#           image: 982534374994.dkr.ecr.us-east-1.amazonaws.com/final-project:frontend-latest
+#           ports:
+#             - containerPort: 5002
+#           env:
+#             - name: API_BASE_URL
+#               value: http://api:5001
