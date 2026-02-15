@@ -33,7 +33,7 @@ Insert architecture diagram below:
 
 ```
 ![Architecture Diagram](https://github.com/Beyond003/Complete_DevOps_Project/blob/main/docs/images/Architecture1.png?raw=true)
-![Architecture Diagram](docs/images/Architecture2.png)
+![Architecture Diagram](https://github.com/Beyond003/Complete_DevOps_Project/blob/main/docs/images/Architecture2.png?raw=true)
 ```
 
 ---
