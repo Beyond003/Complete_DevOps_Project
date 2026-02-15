@@ -31,11 +31,6 @@ This project follows a production-style DevOps workflow:
 
 
 ```
-![Architecture Diagram](https://raw.githubusercontent.com/Beyond003/Complete_DevOps_Project/main/docs/images/Architecture1.png)
-
-![Architecture Diagram](docs/images/Architecture2.png)
-
-```
 
 ---
 
