@@ -1,0 +1,7 @@
+---
+- name: Setup Tools & Nexus on EC2 instance
+  hosts: host
+  become: true
+  roles:
+    - tools
+    - nexus

@@ -1,0 +1,7 @@
+---
+- name: Uninstall Tools & Nexus on EC2 instance
+  hosts: host
+  become: true
+  roles:
+    - nexus-rollback
+    - tools-rollback
