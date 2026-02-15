@@ -31,8 +31,9 @@ This project follows a production-style DevOps workflow:
 
 
 ```
-![image Alt](https://github.com/Beyond003/Complete_DevOps_Project/blob/cf97ddd2bfb5f9f878abbf86309aef975cb60cdd/docs/images/Architecture1.png)
-![Architecture Diagram](https://github.com/Beyond003/Complete_DevOps_Project/blob/main/docs/images/Architecture2.png?raw=true)
+![Architecture Diagram](docs/images/Architecture1.png)
+![Architecture Diagram](docs/images/Architecture2.png)
+
 ```
 
 ---
