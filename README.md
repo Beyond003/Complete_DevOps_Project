@@ -32,7 +32,7 @@ This project follows a production-style DevOps workflow:
 Insert architecture diagram below:
 
 ```
-![Architecture Diagram]https://github.com/Beyond003/Complete_DevOps_Project/blob/main/docs/images/Architecture1.png?raw=true
+![Architecture Diagram](https://github.com/Beyond003/Complete_DevOps_Project/blob/main/docs/images/Architecture1.png?raw=true)
 ![Architecture Diagram](docs/images/Architecture2.png)
 ```
 
